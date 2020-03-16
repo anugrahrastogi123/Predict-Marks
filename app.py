@@ -14,7 +14,7 @@ def marks():
     if request.method == 'POST':
         hours = float(request.form['hours'])
 
-        marks = str(model.predict([[hours]])[0][0])
+        marks = str(round(model.predict([[hours]])[0][0], 2))
 
     return render_template("index.html", your_marks = marks)
 
